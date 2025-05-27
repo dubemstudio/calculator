@@ -1,0 +1,36 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root{
+  /* === Font Setting === */
+  --font-base: "Work Sans", system-ui, sans-serif;
+  --font-size-lg: 96px;
+  --font-size-md: 40px;
+  --font-size-lg: 32px;
+
+  /* === color Palette === */
+  --color-dark-bg: #17171C;
+  --color-light-bg: #F1F2F3;
+  --color-dark-txt: #FFFFFF;
+  --color-light-txt: #000000;
+  --color-light-dark-buttonHigh: #4B5EFC;
+  --color-dark-buttonMedium: #4E505F;
+  --color-light-buttonMedium: #D2D3DA;
+  --color-dark-buttonLow: #2E2F38;
+  --color-light-buttonLow: #FFFFFF;
+
+  /* === Border Radius === */
+  --radius-sm: 24px;
+  --radius-md: 24px;
+
+} 
