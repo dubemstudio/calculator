@@ -11,26 +11,121 @@ html {
   scroll-behavior: smooth;
 }
 
+button{
+  font: inherit;
+  border: none;
+  outline: none;
+  background: none;
+}
+
 :root{
   /* === Font Setting === */
   --font-base: "Work Sans", system-ui, sans-serif;
-  --font-size-lg: 96px;
-  --font-size-md: 40px;
-  --font-size-lg: 32px;
+  --font-size-lg: 6rem;
+  --font-size-md: 2.5rem;
+  --font-size-sm: 2rem;
 
   /* === color Palette === */
   --color-dark-bg: #17171C;
   --color-light-bg: #F1F2F3;
   --color-dark-txt: #FFFFFF;
   --color-light-txt: #000000;
-  --color-light-dark-buttonHigh: #4B5EFC;
-  --color-dark-buttonMedium: #4E505F;
-  --color-light-buttonMedium: #D2D3DA;
-  --color-dark-buttonLow: #2E2F38;
-  --color-light-buttonLow: #FFFFFF;
+  --color-dark-button-high: #4B5EFC;
+  --color-light-button-high: #4B5EFC;
+  --color-dark-button-medium: #4E505F;
+  --color-light-button-medium: #D2D3DA;
+  --color-dark-button-low: #2E2F38;
+  --color-light-button-low: #FFFFFF;
 
   /* === Border Radius === */
-  --radius-sm: 24px;
-  --radius-md: 24px;
+  --radius-sm: 1rem;
+  --radius-md: 1.5rem;
 
 } 
+
+body{
+  background-color: var(--color-light-bg);
+  position: relative;
+}
+
+.btn {
+  position: absolute;
+  top: 1.875rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-light-button-low);
+  width: 4.5rem;
+  height: 2rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.25rem;
+  transition: background-color 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.btn__indicator {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: var(--color-light-button-medium);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  right: 0.25rem;
+  left: unset;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.btn__icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  z-index: 2;
+}
+
+.btn__icon {
+  color: var(--color-light-button-high);
+  font-size: 1.25rem;
+}
+
+.btn__icon-right{
+  opacity: 0;
+}
+
+
+
+/* === Dark Mode === */
+body.dark{
+  background-color: var(--color-dark-bg);
+}
+
+body.dark .btn {
+  background-color: var(--color-dark-button-low);
+}
+
+body.dark .btn__icon-right{
+  opacity: 1;
+}
+
+body.dark .btn__icon-left{
+  opacity: 0;
+}
+
+body.dark .btn__indicator {
+  right: unset;
+  left: 0.25rem;
+  background-color: var(--color-dark-button-medium);
+}
+
+body.dark .btn__icon {
+  color: var(--color-dark-button-high);
+}
