@@ -228,3 +228,13 @@ body.dark .keypad__container .key__clear,
 body.dark .keypad__container .key__percent{
   background-color: var(--color-dark-button-medium);
 }
+
+
+@media screen and (min-width: 1000px){
+  .calculator{
+    max-width: 800px;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
