@@ -1,8 +1,20 @@
 
 
 const btn = document.querySelector('.btn');
+
+// Load saved theme on page load
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') {
+  document.body.classList.add('dark');
+  btn.setAttribute('aria-pressed', 'true');
+} else {
+  document.body.classList.remove('dark');
+  btn.setAttribute('aria-pressed', 'false');
+}
+
+// Handle toggle click
 btn.addEventListener('click', () => {
-  document.body.classList.toggle('dark');
-  const pressed = btn.getAttribute('aria-pressed') === 'true';
-  btn.setAttribute('aria-pressed', String(!pressed));
+  const isDark = document.body.classList.toggle('dark');
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  btn.setAttribute('aria-pressed', String(isDark));
 });

@@ -1,7 +1,9 @@
 /* fonts */
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
-*{
+*,
+*::after,
+*::before{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -40,12 +42,12 @@ button{
   /* === Border Radius === */
   --radius-sm: 1rem;
   --radius-md: 1.5rem;
-
 } 
 
 body{
   background-color: var(--color-light-bg);
   position: relative;
+  height: 100vh;
 }
 
 .btn {
@@ -64,7 +66,6 @@ body{
   justify-content: space-between;
   padding: 0 0.25rem;
   transition: background-color 0.3s ease;
-  overflow: hidden;
   position: relative;
 }
 
@@ -101,6 +102,40 @@ body{
   opacity: 0;
 }
 
+.calculator{
+  position: absolute;
+  bottom: 66px;
+  right: 0;
+  left: 0;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+.calculator .calculator__screen{
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  text-align: right;
+  font-family: var(--font-base);
+  font-weight: 300;
+}
+.calculator__screen .calculator__expression{
+  opacity: 0.6;
+  font-size: var(--font-size-md);
+  color: var(--color-light-txt);
+  line-height: var(--font-size-md);
+}
+.calculator__screen .calculator__result{
+  font-size: var(--font-size-lg);
+  color: var(--color-light-txt);
+  line-height: var(--font-size-lg);
+}
+
+
+
+
 
 
 /* === Dark Mode === */
@@ -128,4 +163,11 @@ body.dark .btn__indicator {
 
 body.dark .btn__icon {
   color: var(--color-dark-button-high);
+}
+
+body.dark .calculator__screen .calculator__expression{
+  color: var(--color-dark-txt);
+}
+body.dark .calculator__screen .calculator__result{
+  color: var(--color-dark-txt);
 }
