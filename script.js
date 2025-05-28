@@ -28,7 +28,7 @@ btn.addEventListener('click', () => {
 
 
 
-// c
+// calculoation process
 let calculation = localStorage.getItem('calculation') || '';
 let result = '';
 
@@ -50,7 +50,7 @@ function clearCalculation(){
 }
 
 function calcResult(){
-  result = eval(calculation)
+  result = Math.round(eval(calculation) * 100) / 100;
   displayResult();
   calculation = result;
 }
@@ -68,5 +68,12 @@ function calcPercent(){
 
   calcResult();
 
+  localStorage.setItem('calculation', calculation);
+}
+
+
+function calcDelete(){
+  calculation = calculation.slice(0, -1);
+  displayCalculation();
   localStorage.setItem('calculation', calculation);
 }

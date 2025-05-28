@@ -36,7 +36,7 @@
       <button class="key key__percent key__operator" aria-label="Percent" onclick="
         calcPercent()">%</button>
       <button class="key key__operator" aria-label="Divide" onclick="
-        updateCalculation(' / ')">÷</button>
+        updateCalculation('/')">÷</button>
       
       <button class="key" aria-label="Seven" onclick="
         updateCalculation('7')">7</button>
@@ -45,7 +45,7 @@
       <button class="key" aria-label="Nine" onclick="
         updateCalculation('9')">9</button>
       <button class="key key__operator" aria-label="Multiply" onclick="
-        updateCalculation(' * ')">×</button>
+        updateCalculation('*')">×</button>
 
       <button class="key" aria-label="Four" onclick="
         updateCalculation('4')">4</button>
@@ -54,7 +54,7 @@
       <button class="key" aria-label="Six" onclick="
         updateCalculation('6')">6</button>
       <button class="key key__operator" aria-label="Subtract" onclick="
-        updateCalculation(' - ')">–</button>
+        updateCalculation('-')">–</button>
 
       <button class="key" aria-label="One" onclick="
         updateCalculation('1')">1</button>
@@ -63,13 +63,14 @@
       <button class="key" aria-label="Three" onclick="
         updateCalculation('3')">3</button>
       <button class="key key__operator" aria-label="Add" onclick="
-        updateCalculation(' + ')">+</button>
+        updateCalculation('+')">+</button>
 
       <button class="key key__zero" aria-label="Dot" onclick="
         updateCalculation('.')">.</button>
       <button class="key" aria-label="Zero" onclick="
         updateCalculation('0')">0</button>
-      <button class="key key__delete key__function" aria-label="Delete">
+      <button class="key key__delete key__function" aria-label="Delete" onclick="
+        calcDelete()">
         <ion-icon name="backspace-outline"></ion-icon>
       </button>
       <button class="key key__equal" aria-label="Equal" onclick="
