@@ -62,3 +62,11 @@ function displayCalculation(){
 function displayResult(){
   document.querySelector('.calculator__result').innerHTML = result;
 }
+
+function calcPercent(){
+  calculation = (eval(calculation)) * 0.01;
+
+  calcResult();
+
+  localStorage.setItem('calculation', calculation);
+}

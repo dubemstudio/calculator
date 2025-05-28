@@ -126,14 +126,20 @@ body{
   font-size: var(--font-size-md);
   color: var(--color-light-txt);
   line-height: var(--font-size-md);
-  overflow-x: scroll;
+  overflow: scroll;
 }
+
 .calculator__screen .calculator__result{
   font-size: var(--font-size-lg);
   color: var(--color-light-txt);
   line-height: var(--font-size-lg);
-  overflow-x: scroll;
+  overflow: scroll;
 }
+.calculator__screen .calculator__expression::-webkit-scrollbar,
+.calculator__screen .calculator__result::-webkit-scrollbar{
+  display: none;
+}
+
 
 .calculator .keypad__container{
   display: grid;
