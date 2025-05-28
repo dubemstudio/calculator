@@ -47,12 +47,12 @@ button{
 body{
   background-color: var(--color-light-bg);
   position: relative;
-  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100)
 }
 
 .btn {
   position: absolute;
-  top: 1.875rem;
+  top: 3rem;
   left: 50%;
   transform: translateX(-50%);
   background-color: var(--color-light-button-low);
@@ -104,14 +104,13 @@ body{
 
 .calculator{
   position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
+  bottom: 40px;
+  right: 20px;
+  left: 20px;
   z-index: 99;
   display: flex;
   flex-direction: column;
   row-gap: 16px;
-  margin: 0 20px 66px;
 }
 
 .calculator .calculator__screen{
@@ -134,6 +133,41 @@ body{
   line-height: var(--font-size-lg);
 }
 
+.calculator .keypad__container{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.keypad__container .key{
+  padding: 20px;
+  font-family: var(--font-base);
+  font-size: var(--font-size-sm);
+  font-weight: 400;
+  border-radius: var(--radius-md);
+  color: var(--color-light-txt);
+  background-color: var(--color-light-button-low);
+}
+
+.keypad__container .key__clear{
+  grid-column: span 2;
+}
+
+.key__delete{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.keypad__container .key__operator,
+.keypad__container .key__equal{
+  background-color: var(--color-light-button-high);
+}
+
+.keypad__container .key__clear,
+.keypad__container .key__percent{
+  background-color: var(--color-light-button-medium);
+}
 
 
 
@@ -171,4 +205,26 @@ body.dark .calculator__screen .calculator__expression{
 }
 body.dark .calculator__screen .calculator__result{
   color: var(--color-dark-txt);
+}
+.calculator .keypad__container{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+body.dark .keypad__container .key{
+  color: var(--color-dark-txt);
+  background-color: var(--color-dark-button-low);
+}
+
+
+
+body.dark .keypad__container .key__operator,
+body.dark .keypad__container .key__equal{
+  background-color: var(--color-dark-button-high);
+}
+
+body.dark .keypad__container .key__clear,
+body.dark .keypad__container .key__percent{
+  background-color: var(--color-dark-button-medium);
 }
