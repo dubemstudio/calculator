@@ -104,13 +104,14 @@ body{
 
 .calculator{
   position: absolute;
-  bottom: 66px;
+  bottom: 0;
   right: 0;
   left: 0;
   z-index: 99;
   display: flex;
   flex-direction: column;
   row-gap: 16px;
+  margin: 0 20px 66px;
 }
 
 .calculator .calculator__screen{
