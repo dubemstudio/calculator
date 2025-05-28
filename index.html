@@ -25,38 +25,54 @@
   <main class="calculator" aria-label="calculator">
     <!-- screen -->
     <section class="calculator__screen">
-      <div class="calculator__expression" aria-label="Calculator expression">6,291÷5</div>
-      <div class="calculator__result" aria-label="Result">1,258.2</div>
+      <div class="calculator__expression" aria-label="Calculator expression"></div>
+      <div class="calculator__result" aria-label="Result"></div>
     </section>
 
     <!-- keypad -->
     <section class="keypad__container" aria-label="keypad">
-      <button class="key key__clear key__function" aria-label="Clear">C</button>
-      <!-- <button class="key key__function" aria-label="Clear">C</button> -->
+      <button class="key key__clear key__function" aria-label="Clear" onclick="
+        clearCalculation()">C</button>
       <button class="key key__percent key__operator" aria-label="Percent">%</button>
-      <button class="key key__operator" aria-label="Divide">÷</button>
+      <button class="key key__operator" aria-label="Divide" onclick="
+        updateCalculation(' / ')">÷</button>
       
-      <button class="key" aria-label="Seven">7</button>
-      <button class="key" aria-label="Eight">8</button>
-      <button class="key" aria-label="Nine">9</button>
-      <button class="key key__operator" aria-label="Multiply">×</button>
+      <button class="key" aria-label="Seven" onclick="
+        updateCalculation('7')">7</button>
+      <button class="key" aria-label="Eight" onclick="
+        updateCalculation('8')">8</button>
+      <button class="key" aria-label="Nine" onclick="
+        updateCalculation('9')">9</button>
+      <button class="key key__operator" aria-label="Multiply" onclick="
+        updateCalculation(' * ')">×</button>
 
-      <button class="key" aria-label="Four">4</button>
-      <button class="key" aria-label="Five">5</button>
-      <button class="key" aria-label="Six">6</button>
-      <button class="key key__operator" aria-label="Subtract">–</button>
+      <button class="key" aria-label="Four" onclick="
+        updateCalculation('4')">4</button>
+      <button class="key" aria-label="Five" onclick="
+        updateCalculation('5')">5</button>
+      <button class="key" aria-label="Six" onclick="
+        updateCalculation('6')">6</button>
+      <button class="key key__operator" aria-label="Subtract" onclick="
+        updateCalculation(' - ')">–</button>
 
-      <button class="key" aria-label="One">1</button>
-      <button class="key" aria-label="Two">2</button>
-      <button class="key" aria-label="Three">3</button>
-      <button class="key key__operator" aria-label="Add">+</button>
+      <button class="key" aria-label="One" onclick="
+        updateCalculation('1')">1</button>
+      <button class="key" aria-label="Two" onclick="
+        updateCalculation('2')">2</button>
+      <button class="key" aria-label="Three" onclick="
+        updateCalculation('3')">3</button>
+      <button class="key key__operator" aria-label="Add" onclick="
+        updateCalculation(' + ')">+</button>
 
-      <button class="key key__zero" aria-label="Dot">.</button>
-      <button class="key" aria-label="Zero">0</button>
+      <button class="key key__zero" aria-label="Dot" onclick="
+        updateCalculation('.')">.</button>
+      <button class="key" aria-label="Zero" onclick="
+        updateCalculation('0')">0</button>
       <button class="key key__delete key__function" aria-label="Delete">
         <ion-icon name="backspace-outline"></ion-icon>
       </button>
-      <button class="key key__equal" aria-label="Equal">=</button>
+      <button class="key key__equal" aria-label="Equal" onclick="
+        calcResult()">=</button>
 
     </section>
   </main>

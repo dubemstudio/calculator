@@ -24,3 +24,41 @@ btn.addEventListener('click', () => {
   localStorage.setItem('theme', isDark ? 'dark' : 'light');
   btn.setAttribute('aria-pressed', String(isDark));
 });
+
+
+
+
+// c
+let calculation = localStorage.getItem('calculation') || '';
+let result = '';
+
+displayCalculation();
+displayResult();
+
+function updateCalculation(value){
+  calculation += value;
+  displayCalculation()
+  localStorage.setItem('calculation', calculation)
+}
+
+function clearCalculation(){
+  calculation = '';
+  result = '';
+  displayCalculation()
+  displayResult();
+  localStorage.setItem('calculation', calculation)
+}
+
+function calcResult(){
+  result = eval(calculation)
+  displayResult();
+  calculation = result;
+}
+
+function displayCalculation(){
+  document.querySelector('.calculator__expression').innerHTML = calculation;
+}
+
+function displayResult(){
+  document.querySelector('.calculator__result').innerHTML = result;
+}

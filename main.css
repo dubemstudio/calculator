@@ -47,7 +47,7 @@ button{
 body{
   background-color: var(--color-light-bg);
   position: relative;
-  height: calc(var(--vh, 1vh) * 100)
+  height: calc(var(--vh, 1vh) * 100);
 }
 
 .btn {
@@ -126,11 +126,13 @@ body{
   font-size: var(--font-size-md);
   color: var(--color-light-txt);
   line-height: var(--font-size-md);
+  overflow-x: scroll;
 }
 .calculator__screen .calculator__result{
   font-size: var(--font-size-lg);
   color: var(--color-light-txt);
   line-height: var(--font-size-lg);
+  overflow-x: scroll;
 }
 
 .calculator .keypad__container{
